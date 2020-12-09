@@ -12,10 +12,12 @@ public class FootballJavaConfigDemoApp {
 				new AnnotationConfigApplicationContext(SportConfig.class);
 
 		//get the bean from spring container
-		Coach coach = context.getBean("footballCoach", FootballCoach.class);
+		FootballCoach coach = context.getBean("footballCoach", FootballCoach.class);
 
 		System.out.println(coach.getDailyWorkout());
 		System.out.println(coach.getDailyInstruction());
+		System.out.println(coach.getEmail());
+		System.out.println(coach.getTeam());
 		
 		//close the context
 		context.close();
