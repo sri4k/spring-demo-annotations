@@ -8,7 +8,9 @@
        http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- enable component scanning -->
-	
 	<context:component-scan base-package="org.demo.spring"/>
-       
+
+	<!-- load the properties file -->
+    <context:property-placeholder location="classpath:sport.properties" />
+          
 </beans>

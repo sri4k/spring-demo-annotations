@@ -2,10 +2,12 @@ package org.demo.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
 //@Component("thatTennisCoach")
+@Component
+@Scope("prototype")
 public class TennisCoach implements Coach {
 
 	//Field injection using Java Reflections
@@ -15,7 +17,7 @@ public class TennisCoach implements Coach {
 	private InstructionService instructionService;
 	
 	public TennisCoach() {
-		System.out.println("default constructor");
+		System.out.println("TennisCoach default constructor");
 	}
 	
 	

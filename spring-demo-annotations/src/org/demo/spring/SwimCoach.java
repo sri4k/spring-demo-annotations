@@ -1,5 +1,8 @@
 package org.demo.spring;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,6 +30,19 @@ public class SwimCoach implements Coach {
 	@Autowired
 	public SwimCoach(@Qualifier("RESTInstruction") InstructionService instructionService) {
 		this.instructionService = instructionService;
+		System.out.println("SwimCoach default constructor");
+	}
+	
+	//define init method
+	@PostConstruct
+	public void initBean() {
+		System.out.println("SwimCoach init");
+	}
+	
+	//define destroy method
+	@PreDestroy
+	public void destroyBean() {
+		System.out.println("SwimCoach destroy");
 	}
 	
 	@Override
